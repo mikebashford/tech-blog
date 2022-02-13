@@ -13,36 +13,52 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheet/style.css" />
     <title>The Tech Blog</title>
   </head>
-
-  <body>
-    <div class="navbar navbar-expand-lg bg-black">
-      <div class="container">
-        <a href="/" class="navbar-brand text-white">The Tech Blog</a>
-      </div>
-      {{#if loggedIn}}
-      <div>
-        <a href="/dashboard " class="nav-item text-white p-2">Dashboard</a>
-        <a id="logout" type="button" class="nav-item text-white text-white p-2">Logout</a>
-      {{else}}
-        <a href="/login" class="nav-item text-white">Login</a>
-      {{/if}}
-      </div>
+  <body style="background-color: #000;">
+    <nav class="navbar navbar-expand-lg bg-black">
+      <div class="d-flex">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        {{#if loggedIn}}
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item list-unstyled"><a href="/" class="nav-link text-white">Home</a></li>
+            <li class="nav-item list-unstyled"><a href="/dashboard " class="nav-link text-white">Dashboard</a></li>
+            <li class="nav-item list-unstyled"><a  id="logout" type="button" class="nav-link text-white">Logout</a></li>
+          {{else}}
+            <li class="nav-item list-unstyled"><a href="/" class="nav-link text-white">Home</a></li>
+            <li class="nav-item list-unstyled"><a href="/dashboard " class="nav-link text-white">Dashboard</a></li>
+            <li class="nav-item list-unstyled"><a href="/login" class="nav-link text-white">Login</a></li>
+        {{/if}}
+          </ul>
+        </div>
+     </div>
+    </nav>
+    <div class="container-fluid bg-black">
+      <h3 class="bg-black text-white rounded-3 border border-5 mb-0 p-3">The Tech Blog</h3>
     </div>
-    <main class="bg-black text-white justify-content-center p-5">
-      {{{body}}}
-      <footer class="d-flex justify-content-center footer bg-black text-white">
-      Thanks for visiting!
-    </footer>
-    </main>
+    <div class="bg-black text-white justify-content-center p-5">
+      <main>
+          {{{body}}}
+      </main>
+    </div>
 
+    <div class="container-fluid bg-black"></div>
+      <footer class="d-flex justify-content-center footer bg-black text-white">
+        Thanks for visiting!
+      </footer>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    {{#if loggedIn}}
+      <script src="/javascript/logout.js"></script>
+    {{/if}}
   </body>
 
 </html>
