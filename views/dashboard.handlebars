@@ -1,17 +1,23 @@
-<section>
-  <h2>Create New Post</h2>
+<section >
+    <div class="d-flex justify-content-center p-5">
+    <h2 class="text-white">Create New Post</h2>
+    </div>
+  <div class="d-flex justify-content-center p-5">
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
+    <form class="new-post-form">
+      <div class="p-2">
+        <label for="post-title" class="text-white m-2">Title</label>
+        <input type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="p-2">
+        <label for="message-body" class="text-white form-label">Message</label>
+        <textarea id="message-body" name="message" class="form-control" rows="4"></textarea>
+      </div>
+      <div class="d-flex justify-content-center p-5">
+      <button type="submit" class="btn btn-success">Create</button>
+      </div>
+    </form>
+  </div>
 </section>
 
 {{#if posts.length}}
