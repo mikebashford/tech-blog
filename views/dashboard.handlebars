@@ -21,14 +21,14 @@
 </section>
 
 {{#if posts.length}}
-<section>
-  <div class="d-flex p-3 border border-5 rounded-3">
+<section class="d-flex p-5">
+  <div class="d-flex p-5">
     <h2>Your Posts</h2>
     <ul>
       {{#each posts as |post|}}
       <li class="mb-2 p-2 d-flex justify-content-center border border-5 rounded-3">
         {{> post-info post}}
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link btn btn-outline-primary ms-5">Edit post</a>
       </li>
       {{/each}}
     </ul>
