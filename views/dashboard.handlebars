@@ -26,9 +26,9 @@
     <h2>Your Posts</h2>
     <ul>
       {{#each posts as |post|}}
-      <li class="mb-2 p-2 d-flex justify-content-center border border-5 rounded-3">
-        {{> post-info post}}
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link btn btn-outline-primary ms-5">Edit post</a>
+      <li class="p-2 mb-2 list-unstyled">
+        {{> post-info post}}      
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link btn btn-outline-primary d-flex justify-content-center p-2 m-2">Edit post</a>
       </li>
       {{/each}}
     </ul>
