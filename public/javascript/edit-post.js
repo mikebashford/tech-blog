@@ -2,6 +2,8 @@ async function editFormHandler(event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name="post-title"]').value.trim();
+  const message = document.querySelector('input[name="message"]').value.trim();
+
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
@@ -9,6 +11,7 @@ async function editFormHandler(event) {
     method: "PUT",
     body: JSON.stringify({
       title,
+      message,
     }),
     headers: {
       "Content-Type": "application/json",
